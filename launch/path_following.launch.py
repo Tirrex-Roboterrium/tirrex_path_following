@@ -142,34 +142,34 @@ def launch_setup(context, *args, **kwargs):
         )
     )
 
-    # if record == "true":
+    if record == "true":
 
-    #     actions.append(
-    #         IncludeLaunchDescription(
-    #             PythonLaunchDescriptionSource(
-    #                 get_package_share_directory("tirrex_demo") + "/launch/record.launch.py"
-    #             ),
-    #             launch_arguments={
-    #                 "demo": demo,
-    #                 "demo_timestamp": demo_timestamp,
-    #                 "demo_config_directory": demo_config_directory,
-    #                 "mode": mode,
-    #                 "robot_namespace": robot_namespace,
-    #             }.items(),
-    #         )
-    #     )
+        actions.append(
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(
+                    get_package_share_directory("tirrex_demo") + "/launch/record.launch.py"
+                ),
+                launch_arguments={
+                    "demo": demo,
+                    "demo_timestamp": demo_timestamp,
+                    "demo_config_directory": demo_config_directory,
+                    "mode": mode,
+                    "robot_namespace": robot_namespace,
+                }.items(),
+            )
+        )
 
-    #     save_replay_configuration(
-    #         demo,
-    #         demo_timestamp,
-    #         "tirrex_path_following.launch.py",
-    #         {
-    #             "mode": "replay_" + mode,
-    #             "robot": robot_namespace,
-    #             "launch_robot": "true",
-    #             "path": path,
-    #         },
-    #     )
+        save_replay_configuration(
+            demo,
+            demo_timestamp,
+            "tirrex_path_following.launch.py",
+            {
+                "mode": "replay_" + mode,
+                "robot": robot_namespace,
+                "launch_robot": "true",
+                "path": path,
+            },
+        )
 
     return [GroupAction(actions)]
 
