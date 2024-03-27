@@ -66,7 +66,7 @@ def get_robot_config_directory(context):
     # if os.path.exists(robot_config_directory):
     #     return robot_config_directory
     # else:
-    return get_package_share_directory("tirrex_" + get_robot(context)) + "/config"
+    return get_package_share_directory("tirrex_" + get_robot(context)) + "/config/robot"
 
 
 def launch_setup(context, *args, **kwargs):
